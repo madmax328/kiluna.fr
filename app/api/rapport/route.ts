@@ -2,10 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import Anthropic from "@anthropic-ai/sdk";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
 export async function GET(req: NextRequest) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   try {
     const { searchParams } = new URL(req.url);
     const sessionId = searchParams.get("session_id");
