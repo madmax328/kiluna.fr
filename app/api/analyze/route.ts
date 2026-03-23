@@ -33,10 +33,12 @@ Analyse ce contrat et retourne UNIQUEMENT un JSON valide avec cette structure ex
   ]
 }
 
-Critères:
-- "ok": clause standard et légale
-- "suspicious": clause inhabituelle, déséquilibrée ou potentiellement abusive
-- "illegal": clause contraire au droit français (Code civil, Code du travail, loi ALUR...)
+Critères stricts — sois conservateur, ne sur-signale pas :
+- "ok": clause standard, équilibrée et conforme au droit français
+- "suspicious": clause qui crée un déséquilibre significatif entre les parties, qui contourne une protection légale, ou qui est manifestement défavorable à l'une des parties sans justification. Une clause courante dans les contrats professionnels (ex: limitation de responsabilité standard, clause de confidentialité normale, préavis raisonnable) est "ok" même si elle n'est pas parfaite.
+- "illegal": clause qui viole explicitement une disposition impérative du droit français (Code civil, Code du travail, loi ALUR, Code de la consommation...). Réserve ce statut aux violations claires et certaines, pas aux simples zones grises.
+
+En cas de doute entre "ok" et "suspicious", préfère "ok". En cas de doute entre "suspicious" et "illegal", préfère "suspicious".
 
 Contrat à analyser:
 ---
