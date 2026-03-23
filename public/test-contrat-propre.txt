@@ -1,0 +1,49 @@
+CONTRAT DE PRESTATION DE SERVICES
+(Contrat de freelance / mission)
+
+Entre les soussignés :
+
+CLIENT : SAS TECHVISION, au capital de 10 000 euros, RCS Paris B 123 456 789, représentée par M. Sophie LEGRAND, Directrice Générale, domiciliée au 42 boulevard Haussmann, 75009 Paris (ci-après "le Client")
+
+PRESTATAIRE : M. Lucas BERNARD, auto-entrepreneur, SIRET 987 654 321 00015, domicilié au 17 rue Championnet, 75018 Paris (ci-après "le Prestataire")
+
+Il a été convenu ce qui suit :
+
+ARTICLE 1 — OBJET DE LA MISSION
+Le Prestataire est chargé de réaliser la refonte du site web du Client, incluant : conception UX/UI, intégration front-end, mise en production. Les livrables sont détaillés dans l'annexe technique jointe au présent contrat.
+
+ARTICLE 2 — DURÉE DE LA MISSION
+La mission débute le 1er mai 2024 pour une durée de 3 mois, soit jusqu'au 31 juillet 2024. Toute prolongation fera l'objet d'un avenant signé par les deux parties.
+
+ARTICLE 3 — RÉMUNÉRATION
+La rémunération totale est fixée à 9 000 euros HT, soit 10 800 euros TTC (TVA 20%), répartie comme suit :
+- 30% à la signature du contrat : 2 700 euros HT
+- 40% à la validation de la maquette : 3 600 euros HT
+- 30% à la livraison finale : 2 700 euros HT
+
+ARTICLE 4 — MODALITÉS DE PAIEMENT
+Chaque facture est payable par virement bancaire dans un délai de 30 jours à compter de sa réception, conformément à la loi LME. En cas de retard de paiement, des pénalités seront appliquées au taux légal en vigueur, majoré de 3 points.
+
+ARTICLE 5 — PROPRIÉTÉ INTELLECTUELLE
+À compter du paiement intégral, le Client dispose d'une licence exclusive d'utilisation des livrables pour son activité commerciale. Le Prestataire conserve le droit de mentionner cette réalisation dans son portfolio, sauf opposition écrite du Client dans les 30 jours suivant la livraison.
+
+ARTICLE 6 — CONFIDENTIALITÉ
+Chaque partie s'engage à ne pas divulguer les informations confidentielles de l'autre partie pendant la durée de la mission et pendant 2 ans après son terme. Cette obligation ne s'applique pas aux informations déjà publiques ou obtenues légalement de tiers.
+
+ARTICLE 7 — INDÉPENDANCE
+Le Prestataire agit en toute indépendance. Le présent contrat ne crée aucun lien de subordination et ne saurait être requalifié en contrat de travail. Le Prestataire est libre d'organiser son temps de travail et d'accepter d'autres missions.
+
+ARTICLE 8 — RÉSILIATION
+Chacune des parties peut résilier le présent contrat moyennant un préavis écrit de 30 jours. En cas de résiliation par le Client, les prestations déjà réalisées sont dues au prorata. En cas de faute grave, la résiliation peut être immédiate.
+
+ARTICLE 9 — RESPONSABILITÉ
+La responsabilité du Prestataire est limitée au montant des sommes effectivement perçues au titre du présent contrat. Le Prestataire n'est pas responsable des dommages indirects ou immatériels.
+
+ARTICLE 10 — DROIT APPLICABLE ET LITIGES
+Le présent contrat est soumis au droit français. En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute action judiciaire. À défaut, le tribunal compétent sera celui du siège social du Client.
+
+Fait à Paris, le 15 avril 2024
+En deux exemplaires originaux.
+
+Le Client : S. LEGRAND (SAS TECHVISION)
+Le Prestataire : L. BERNARD
