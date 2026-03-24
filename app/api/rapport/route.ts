@@ -8,14 +8,22 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const sessionId = searchParams.get("session_id");
+    const paymentIntentId = searchParams.get("payment_intent");
 
-    if (!sessionId) {
+    if (!sessionId && !paymentIntentId) {
       return NextResponse.json({ error: "Session manquante" }, { status: 400 });
     }
 
-    const session = await stripe.checkout.sessions.retrieve(sessionId);
-    if (session.payment_status !== "paid") {
-      return NextResponse.json({ error: "Paiement non confirmé" }, { status: 402 });
+    if (sessionId) {
+      const session = await stripe.checkout.sessions.retrieve(sessionId);
+      if (session.payment_status !== "paid") {
+        return NextResponse.json({ error: "Paiement non confirmé" }, { status: 402 });
+      }
+    } else if (paymentIntentId) {
+      const pi = await stripe.paymentIntents.retrieve(paymentIntentId);
+      if (pi.status !== "succeeded") {
+        return NextResponse.json({ error: "Paiement non confirmé" }, { status: 402 });
+      }
     }
 
     // Generate a demo detailed report (in production, store the contract text and retrieve it)

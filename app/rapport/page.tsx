@@ -52,17 +52,21 @@ const severityConfig = {
 function RapportContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
+  const paymentIntentId = searchParams.get("payment_intent");
   const [report, setReport] = useState<Report | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!sessionId) {
+    if (!sessionId && !paymentIntentId) {
       setError("Session invalide");
       setLoading(false);
       return;
     }
-    fetch(`/api/rapport?session_id=${sessionId}`)
+    const param = sessionId
+      ? `session_id=${sessionId}`
+      : `payment_intent=${paymentIntentId}`;
+    fetch(`/api/rapport?${param}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.error) setError(data.error);
