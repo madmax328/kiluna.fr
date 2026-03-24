@@ -10,6 +10,7 @@ export default function PaiementPage() {
   const [loading, setLoading] = useState(false);
   const [cardLoading, setCardLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [stripeLoadError, setStripeLoadError] = useState(false);
 
   // Kept as `any` to avoid importing Stripe types from the vanilla bundle
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,7 +25,11 @@ export default function PaiementPage() {
       const stripe = await loadStripe(
         process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
       );
-      if (!stripe || !cardRef.current || !mounted) return;
+      if (!stripe) {
+        if (mounted) setStripeLoadError(true);
+        return;
+      }
+      if (!cardRef.current || !mounted) return;
 
       stripeRef.current = stripe;
 
@@ -137,13 +142,25 @@ export default function PaiementPage() {
             <label className="block text-sm font-medium text-slate-300 mb-2">
               Informations de carte
             </label>
-            <div
-              className={`bg-slate-800 border border-slate-700 rounded-xl p-4 mb-4 transition-opacity ${
-                cardLoading ? "opacity-40" : ""
-              }`}
-            >
-              <div ref={cardRef} />
-            </div>
+            {stripeLoadError ? (
+              <div className="bg-red-950/30 border border-red-800 rounded-xl p-4 mb-4 text-red-400 text-sm">
+                Impossible de charger le module de paiement. Vérifiez votre connexion ou réessayez.
+              </div>
+            ) : (
+              <div
+                className={`bg-slate-800 border border-slate-700 rounded-xl p-4 mb-4 transition-opacity ${
+                  cardLoading ? "opacity-40" : ""
+                }`}
+              >
+                {cardLoading && (
+                  <div className="flex items-center gap-2 text-slate-500 text-sm">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Chargement du formulaire...
+                  </div>
+                )}
+                <div ref={cardRef} />
+              </div>
+            )}
 
             {error && (
               <p className="text-red-400 text-sm mb-4 bg-red-950/30 border border-red-800 rounded-lg px-3 py-2">
@@ -153,7 +170,7 @@ export default function PaiementPage() {
 
             <button
               type="submit"
-              disabled={loading || cardLoading}
+              disabled={loading || cardLoading || stripeLoadError}
               className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               {loading ? (
