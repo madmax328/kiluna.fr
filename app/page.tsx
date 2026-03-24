@@ -112,7 +112,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         />
       </button>
       {open && (
-        <div className="px-6 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-4">
+        <div className="px-6 pb-6 text-gray-500 text-base leading-relaxed border-t border-gray-100 pt-4">
           {a}
         </div>
       )}
@@ -202,7 +202,7 @@ export default function Home() {
             {/* Colonne gauche */}
             <div>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-blue-700 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-8">
+              <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full shadow-sm mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                 Analyse de contrats par IA · Droit français
               </div>
@@ -233,13 +233,13 @@ export default function Home() {
                     className={`flex-1 ${i > 0 ? "pl-6 border-l border-gray-200" : ""} ${i < 2 ? "pr-6" : ""}`}
                   >
                     <div className="text-xl font-black text-gray-950">{s.value}</div>
-                    <div className="text-xs text-gray-400 mt-0.5 leading-snug">{s.label}</div>
+                    <div className="text-sm text-gray-400 mt-0.5 leading-snug">{s.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* Trust micro-signals */}
-              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400 font-medium">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-medium">
                 <span className="flex items-center gap-1.5"><span>🔒</span> Contrat jamais stocké</span>
                 <span className="w-1 h-1 rounded-full bg-gray-200" />
                 <span className="flex items-center gap-1.5"><span>🇫🇷</span> Basé sur la loi française</span>
@@ -406,7 +406,7 @@ export default function Home() {
       </section>
 
       {/* ── Comment ça marche — section sombre ──────────────────── */}
-      <section className="bg-gray-950 text-white py-24">
+      <section className="bg-slate-800 text-white py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Comment ça marche</p>
@@ -421,12 +421,12 @@ export default function Home() {
           <div className="grid sm:grid-cols-3 gap-8">
             {HOW_IT_WORKS.map((step) => (
               <div key={step.step} className="relative group">
-                <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 h-full hover:border-blue-500/40 transition-all duration-300">
+                <div className="bg-slate-700/60 border border-slate-600 rounded-2xl p-8 h-full hover:border-blue-400/60 transition-all duration-300">
                   <div className="text-5xl font-black text-blue-500/20 mb-5 group-hover:text-blue-500/30 transition-colors">
                     {step.step}
                   </div>
                   <h3 className="font-bold text-white text-lg mb-3">{step.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-gray-300 text-base leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -443,8 +443,8 @@ export default function Home() {
               <div key={t.title} className="flex items-start gap-3">
                 <span className="text-2xl">{t.icon}</span>
                 <div>
-                  <div className="font-semibold text-white text-sm">{t.title}</div>
-                  <div className="text-gray-500 text-xs mt-0.5">{t.desc}</div>
+                  <div className="font-semibold text-white text-base">{t.title}</div>
+                  <div className="text-slate-400 text-sm mt-0.5">{t.desc}</div>
                 </div>
               </div>
             ))}
@@ -469,7 +469,7 @@ export default function Home() {
                 <span className="text-3xl group-hover:scale-110 transition-transform duration-200">{c.icon}</span>
                 <div>
                   <div className="font-bold text-gray-900 text-sm">{c.label}</div>
-                  <div className="text-gray-400 text-xs mt-0.5">{c.desc}</div>
+                  <div className="text-gray-500 text-sm mt-0.5">{c.desc}</div>
                 </div>
               </div>
             ))}
@@ -492,7 +492,7 @@ export default function Home() {
                 className="bg-white border border-gray-200 rounded-2xl p-7 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 <StarRating count={t.stars} />
-                <p className="text-gray-600 text-sm leading-relaxed flex-1">"{t.text}"</p>
+                <p className="text-gray-600 text-base leading-relaxed flex-1">"{t.text}"</p>
                 <div className="border-t border-gray-100 pt-5">
                   <div className="font-bold text-gray-900 text-sm">{t.author}</div>
                   <div className="text-gray-400 text-xs mt-0.5">{t.role}</div>
@@ -540,7 +540,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────── */}
-      <footer className="bg-gray-950 text-white py-14 px-6">
+      <footer className="bg-slate-900 text-white py-14 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pb-10 border-b border-gray-800">
             <div>
@@ -550,7 +550,7 @@ export default function Home() {
                 </div>
                 <span className="font-black text-lg">kiluna<span className="text-blue-400">.fr</span></span>
               </div>
-              <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
+              <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
                 Kiluna simplifie la lecture de tes contrats grâce à l'IA.
                 Analyse informative — ne constitue pas un avis juridique.
               </p>
