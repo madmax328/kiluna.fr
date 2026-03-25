@@ -36,7 +36,7 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-4">1. Responsable du traitement</h2>
             <div className="bg-gray-50 rounded-xl p-5 text-sm space-y-1">
-              <p><span className="font-semibold text-gray-700">Société :</span> [À compléter]</p>
+              <p><span className="font-semibold text-gray-700">Editeur :</span> Ricardo Ferraz</p>
               <p><span className="font-semibold text-gray-700">Email DPO :</span> contact@kiluna.fr</p>
             </div>
           </section>
