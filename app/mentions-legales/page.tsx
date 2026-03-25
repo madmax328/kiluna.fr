@@ -34,13 +34,16 @@ export default function MentionsLegales() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">1. Éditeur du site</h2>
             <p>Le site kiluna.fr est édité par :</p>
             <div className="mt-3 bg-gray-50 rounded-xl p-5 space-y-1 text-sm">
-              <p><span className="font-semibold text-gray-700">Raison sociale :</span> [À compléter — nom ou raison sociale]</p>
-              <p><span className="font-semibold text-gray-700">Forme juridique :</span> [À compléter — ex. : Auto-entrepreneur / SASU]</p>
-              <p><span className="font-semibold text-gray-700">SIRET :</span> [À compléter]</p>
-              <p><span className="font-semibold text-gray-700">Adresse :</span> [À compléter]</p>
+              <p><span className="font-semibold text-gray-700">Nom :</span> [TON PRÉNOM NOM]</p>
+              <p><span className="font-semibold text-gray-700">Statut :</span> Personne physique — micro-entreprise en cours de création</p>
+              <p><span className="font-semibold text-gray-700">SIRET :</span> En cours d'immatriculation</p>
+              <p><span className="font-semibold text-gray-700">Adresse :</span> [TON ADRESSE POSTALE]</p>
               <p><span className="font-semibold text-gray-700">Email :</span> contact@kiluna.fr</p>
-              <p><span className="font-semibold text-gray-700">Directeur de la publication :</span> [À compléter — nom du responsable]</p>
+              <p><span className="font-semibold text-gray-700">Directeur de la publication :</span> [TON PRÉNOM NOM]</p>
             </div>
+            <p className="mt-3 text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+              ⚠️ Ce site est en phase de lancement. L'immatriculation légale est en cours. Les paiements sont traités via Stripe et entièrement sécurisés.
+            </p>
           </section>
 
           <section>
