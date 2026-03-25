@@ -70,7 +70,18 @@ function RapportContent() {
       .then((r) => r.json())
       .then((data) => {
         if (data.error) setError(data.error);
-        else setReport(data);
+        else {
+          setReport(data);
+          // TikTok Pixel — événement Purchase (conversion)
+          if (typeof window !== "undefined" && (window as any).ttq) {
+            (window as any).ttq.track("Purchase", {
+              value: 2.99,
+              currency: "EUR",
+              content_type: "product",
+              content_id: "rapport-contrat",
+            });
+          }
+        }
       })
       .catch(() => setError("Erreur lors du chargement"))
       .finally(() => setLoading(false));
