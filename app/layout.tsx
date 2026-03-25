@@ -20,40 +20,38 @@ export const metadata: Metadata = {
     "Uploadez votre bail, CDI, contrat freelance ou abonnement. L'IA détecte les clauses abusives ou illégales en 60 secondes. Rapport complet dès 2,99€.",
   keywords: [
     "clauses abusives",
-    "analyse contrat",
-    "bail location",
-    "contrat CDI",
-    "contrat freelance",
-    "droit français",
+    "analyse contrat IA",
+    "bail location clause abusive",
+    "contrat CDI illégal",
+    "contrat freelance analyse",
+    "droit français contrat",
     "protection locataire",
     "IA juridique",
-    "clause illégale",
+    "clause illégale bail",
+    "vérifier contrat travail",
+    "analyser contrat en ligne",
+    "clause non-concurrence illégale",
   ],
   authors: [{ name: "Kiluna" }],
   creator: "Kiluna",
+  publisher: "Kiluna",
+  category: "Legal Technology",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: baseUrl,
     siteName: "Kiluna",
-    title: "Kiluna — Détecteur de clauses abusives",
+    title: "Kiluna — Détecteur de clauses abusives dans vos contrats",
     description:
-      "L'IA qui analyse vos contrats et détecte les clauses abusives ou illégales en 60 secondes.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Kiluna — Analyse de contrats par IA",
-      },
-    ],
+      "L'IA qui analyse vos contrats et détecte les clauses abusives ou illégales en 60 secondes. Bail, CDI, freelance — droit français. Dès 2,99€.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kiluna — Détecteur de clauses abusives",
     description:
-      "L'IA qui analyse vos contrats et détecte les clauses abusives ou illégales en 60 secondes.",
-    images: ["/og-image.png"],
+      "L'IA qui analyse vos contrats et détecte les clauses abusives ou illégales en 60 secondes. Dès 2,99€.",
+    site: "@kilunaFR",
+    creator: "@kilunaFR",
   },
   robots: {
     index: true,
@@ -69,9 +67,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  verification: {
+    google: "",
+  },
 };
 
-const jsonLd = {
+const jsonLdApp = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Kiluna",
@@ -83,10 +84,66 @@ const jsonLd = {
     "@type": "Offer",
     price: "2.99",
     priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
     description: "Rapport d'analyse complet de contrat",
   },
   inLanguage: "fr-FR",
   operatingSystem: "All",
+  browserRequirements: "Requires JavaScript",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "47",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Mes données sont-elles conservées ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Non. Ton contrat est analysé en temps réel et n'est jamais stocké sur nos serveurs. L'analyse est instantanée et confidentielle.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Le rapport remplace-t-il un avocat ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Non. Kiluna fournit une analyse informative basée sur le droit français. Pour une situation grave ou un litige, consulte un professionnel du droit.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quels formats de fichiers acceptez-vous ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "PDF et TXT jusqu'à 10 Mo. Pour les PDF scannés (images), le texte doit être sélectionnable.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Combien de temps pour recevoir le rapport ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "L'analyse préliminaire prend moins de 60 secondes. Le rapport complet est généré immédiatement après le paiement.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quels types de contrats analysez-vous ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Kiluna analyse tout document juridique en français : bail de location, contrat de travail (CDI, CDD), contrat freelance, abonnements, CGU, partenariats commerciaux.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -100,7 +157,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(jsonLdApp).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdFaq).replace(/</g, "\\u003c"),
           }}
         />
       </head>

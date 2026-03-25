@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import Link from "next/link";
 import {
   Shield,
   Upload,
@@ -561,8 +562,16 @@ export default function Home() {
             </div>
           </div>
           <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <p className="text-gray-700 text-xs">© {new Date().getFullYear()} kiluna.fr — Tous droits réservés</p>
-            <p className="text-gray-700 text-xs">Paiement sécurisé par Stripe</p>
+            <p className="text-gray-600 text-xs">© {new Date().getFullYear()} kiluna.fr — Tous droits réservés</p>
+            <div className="flex items-center gap-5">
+              <Link href="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">
+                Mentions légales
+              </Link>
+              <Link href="/politique-confidentialite" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">
+                Politique de confidentialité
+              </Link>
+              <p className="text-gray-600 text-xs">Paiement sécurisé par Stripe</p>
+            </div>
           </div>
         </div>
       </footer>
